@@ -45,11 +45,7 @@
     init();
     
  */
-    class PhotographesFactory {
-      constructor(photographers) {
-          return new Photographe(photographers)
-      }
-  }
+
 
     class Accueil {
       constructor() {
@@ -60,15 +56,6 @@
 
       
     async main() {
-      /** Système de retour au contenu **/
-      window.onscroll = function() {
-          if (window.scrollY != 0) {
-              document.getElementById("retour-contenu").style.display = "block";
-          } else {
-              document.getElementById("retour-contenu").style.display = "none";
-          }
-      }
-
       let photographesData = await this.photographesApi.getPhotographes();
       let Photographe = photographesData.map(photographe => new PhotographesFactory(photographe));
 

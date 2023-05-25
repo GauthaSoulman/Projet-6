@@ -1,5 +1,14 @@
 @import url("photographer.css");
 
+:root {
+    --primaire: #901c1c;
+    --primaire-alternatif: #d3573c;
+    --secondaire: #db8876;
+    --secondaire-alternatif-1: #525252;
+    --secondaire-alternatif-1-2: #fafafa;
+    --secondaire-alternatif-2: #901c1c;
+  }
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
@@ -28,7 +37,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
+    margin-top: 100px;   
+    text-align: center
 }
 
 .photographer_section article {
@@ -40,11 +50,145 @@ h1 {
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
+    color: var(--primaire-alternatif);
+    font-size: 25px;
 }
 
 .photographer_section article img {
+    
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px #acadb6;
     height: 200px;
+    object-fit: cover;
     width: 200px;
+
+}
+.nom-photographe {
+    color: var(--primaire-alternatif);
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+
+.lien-photographe {
+    text-decoration: none;
+  }
+
+.lieu-photographe {
+    color: var(--primaire);
+    font-size: 22px;
+  }
+
+.img-photographe{
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px #acadb6;
+    height: 200px;
+    object-fit: cover;
+  }
+
+/** Page photographe **/
+#profil-infos-photographe {
+  background-color: var(--secondaire-alternatif-1-2);
+  margin: 0 100px;
+  padding: 50px;
+  position: relative;
+}
+#profil-photo-photographe {
+  height: 180px;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+}
+#profil-nom-contact-photographe {
+  display: inline-flex;
+}
+.btn-contact {
+  background-color: var(--primaire);
+  border: transparent;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 200px;
+  padding: 15px 10px;
+}
+.btn-contact:hover {
+  background-color: var(--secondaire);
+  color: #000000;
+  cursor: pointer;
+  font-weight: 700;
+}
+#profil-description-photographe {
+  margin-top: 10px;
+}
+#trier {
+  margin: 25px 100px;
+}
+.trier-texte {
+  font-weight: bold;
+}
+#trier > select {
+  background-color: var(--primaire);
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  height: 60px;
+  padding: 0 5px;
+  width: 150px;
+}
+#trier > select > option {
+  border-top: 1px solid #ffffff;
+}
+#profil-liste-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin: 0 100px 50px 100px;
+}
+#aucun-contenu {
+  display: none;
+}
+.photo {
+  flex: 1 0 30%;
+}
+.img-photo {
+  border-radius: 5px;
+  display: block;
+  height: 400px;
+  margin: auto;
+  object-fit: cover;
+  width: 100%;
+}
+.titre-photo {
+  color: var(--primaire);
+  font-size: 24px;
+}
+.like {
+  color: var(--primaire);
+  float: right;
+  font-size: 24px;
+}
+.like-coeur::after {
+  content: "\2764";
+}
+.like-coeur:hover {
+  color: var(--primaire-alternatif);
+  cursor: pointer;
+}
+#profil-likes-tarif {
+  background-color: var(--secondaire);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: 0;
+  font-size: 18px;
+  padding: 10px 15px;
+  position: fixed;
+  right: 35px;
+  width: fit-content;
+}
+#profil-tarif-photographe {
+  margin-left: 15px;
 }

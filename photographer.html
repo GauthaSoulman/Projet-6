@@ -13,9 +13,20 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <section id="profil-infos-photographe"></section>
+     <!--  <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
     </main>
+
+    <section id="profil-liste-photos">
+      <span id="aucun-contenu">Aucun contenu pour ce filtre sur ce profil.</span>
+    </section>
+
+    <section id="profil-likes-tarif">
+      <span id="profil-likes"></span>
+      <span id="profil-tarif"></span>
+    </section>
+
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -31,7 +42,12 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
+    <script src="scripts/api/api.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/models/galery.js"></script>
+    <script src="/scripts/models/Photographe.js"></script>
+    <script src="/scripts/template/creatgalery.js"></script>
+    <script src="/scripts/factories/photographer.js"></script>
+    <script src="/scripts/pages/photographer.js"></script>
   </body>
 </html>
