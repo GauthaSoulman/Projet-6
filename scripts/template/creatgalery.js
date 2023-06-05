@@ -16,10 +16,11 @@ class PhotographePhoto {
             photo.setAttribute("data-likes", `${this.photo.likes}`);
             photo.setAttribute("data-date", "'"+datePrecise+"'");
             photo.setAttribute("data-titre", `${this.photo.title}`);
-
+            
             let cartePhoto = `
                 <a href="#" class="lien-lightbox" aria-label="image en gros plan" onclick="ouvreLightbox(${this.indexPhoto}, '${this.photo.title}')">
-                    <img alt="${this.photo.description}" class="img-photo src-contenu" src="assets/images/${this.nomPhotographe}/${this.photo.image}">
+               
+                    <img alt="${this.photo.title}" class="img-photo src-contenu" src="assets/images/${this.nomPhotographe}/${this.photo.image}">
                 </a>
                 <div>
                     <span class="titre-photo">${this.photo.title}</span>
@@ -37,7 +38,6 @@ class PhotographePhoto {
     }
 
 }
-
 class PhotographeProfil {
     constructor(photographe, idURL) {
         this.photographe = photographe;
@@ -87,12 +87,11 @@ class PhotographeVideo {
             photo.setAttribute("data-date", "'"+datePrecise+"'");
             photo.setAttribute("data-titre", `${this.photo.title}`);
 
-            this.photo.tags.forEach(tag => photo.classList.add(tag));
 
             let cartePhoto = `
                 <a href="#" class="lien-lightbox" aria-label="image en gros plan" onclick="ouvreLightbox(${this.indexPhoto}, '${this.photo.title}')">
-                    <video title="${this.photo.description}" controls class="img-photo">
-                        <source class="src-contenu" src="ressources/img/${this.nomPhotographe}/${this.photo.video}" type="video/mp4">
+                    <video title="${this.photo.title}" controls class="img-photo">
+                        <source class="src-contenu" src="assets/images/${this.nomPhotographe}/${this.photo.video}" type="video/mp4">
                     </video>
                 </a>
                 <div>
@@ -108,6 +107,22 @@ class PhotographeVideo {
         } else {
             return "";
         }        
+    }
+
+}
+
+class PhotographeLike {
+    constructor(nbLikeTotal) {
+        this.nbLikeTotal = nbLikeTotal;
+    }
+
+    createLikesProfil() {
+        const createur = document.createElement('span');
+            let profilPhotographe = `
+                <span id="profil-likes-photographe">${this.nbLikeTotal}</span> ♥</span>
+            `;
+            createur.innerHTML = profilPhotographe;
+            return createur;
     }
 
 }

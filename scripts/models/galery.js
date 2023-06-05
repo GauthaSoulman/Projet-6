@@ -7,7 +7,6 @@ class Photo {
         this._likes = photo.likes;
         this._date = photo.date;
         this._price = photo.price;
-        this._description = photo.description;
         this._nomPhotographe = nomPhotographe;
     }
 
@@ -39,9 +38,6 @@ class Photo {
         return this._price;
     }
 
-    get description() {
-        return this._description;
-    }
 
     get nomPhotographe() {
         return this._nomPhotographe;
@@ -58,7 +54,6 @@ class Video {
         this._likes = photo.likes;
         this._date = photo.date;
         this._price = photo.price;
-        this._description = photo.description;
         this._nomPhotographe = nomPhotographe;
     }
 
@@ -88,10 +83,6 @@ class Video {
 
     get price() {
         return this._price;
-    }
-
-    get description() {
-        return this._description;
     }
 
     get nomPhotographe() {

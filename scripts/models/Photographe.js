@@ -7,6 +7,7 @@ class Photographe {
         this._tagline = photographers.tagline;
         this._price = photographers.price;
         this._portrait = photographers.portrait;
+        this._nomPhotographe = photographers.name;   
     }
 
     get id() {
@@ -37,4 +38,10 @@ class Photographe {
         return this._price;
     }
 
+    get nomPhotographe(){
+        var name=this._name;
+        var nomabreger=name.substr(0, this._name.indexOf(' '));
+        return nomabreger;  
+       
+    }
 }

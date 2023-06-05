@@ -1,3 +1,4 @@
+
 class Api {
     constructor(url) {
         this.url = url
@@ -42,4 +43,5 @@ class PhotographeApi extends Api {
     async getLikes() {
         return await this.getLikesJSON()
     }
+
 }
